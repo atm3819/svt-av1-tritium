@@ -1174,7 +1174,7 @@ EbErrorType svt_av1_set_default_params(EbSvtAv1EncConfiguration* config_ptr) {
     config_ptr->enable_tf       = 1;
     config_ptr->enable_tf_key   = 1;
     config_ptr->enable_overlays = false;
-    config_ptr->tune            = 1;
+    config_ptr->tune            = 0;
     // Super-resolution default values
     config_ptr->superres_mode      = SUPERRES_NONE;
     config_ptr->superres_denom     = SCALE_NUMERATOR;
@@ -1206,8 +1206,8 @@ EbErrorType svt_av1_set_default_params(EbSvtAv1EncConfiguration* config_ptr) {
     // Quant Matrices (QM)
     config_ptr->enable_qm           = 1;
     config_ptr->min_qm_level        = 6;
-    config_ptr->max_qm_level        = 10;
-    config_ptr->min_chroma_qm_level = 8;
+    config_ptr->max_qm_level        = 15;
+    config_ptr->min_chroma_qm_level = 10;
     config_ptr->max_chroma_qm_level = 15;
 
     config_ptr->startup_mg_size                   = 0;
@@ -1220,7 +1220,7 @@ EbErrorType svt_av1_set_default_params(EbSvtAv1EncConfiguration* config_ptr) {
     config_ptr->fgs_table                         = NULL;
     config_ptr->enable_variance_boost             = true;
     config_ptr->variance_boost_strength           = 2;
-    config_ptr->variance_octile                   = 5;
+    config_ptr->variance_octile                   = 6;
     config_ptr->tf_strength                       = 1;
     config_ptr->variance_boost_curve              = 0;
     config_ptr->luminance_qp_bias                 = 0;
@@ -1238,7 +1238,7 @@ EbErrorType svt_av1_set_default_params(EbSvtAv1EncConfiguration* config_ptr) {
     config_ptr->adaptive_film_grain               = true;
     config_ptr->max_tx_size                       = 64;
     config_ptr->extended_crf_qindex_offset        = 0;
-    config_ptr->ac_bias                           = 1.0;
+    config_ptr->ac_bias                           = 1.5;
     config_ptr->hbd_mds                           = DEFAULT;
 
     // Ref-frame management disabled by default → legacy bit-exact behavior
