@@ -246,6 +246,8 @@
 #define ALT_CDEF_TOKEN "--enable-alt-cdef"
 #define ALT_DLF_TOKEN "--enable-alt-dlf"
 #define ENABLE_DAALA_TOKEN "--enable-daala"
+#define ENABLE_DAALA_RD_TOKEN "--enable-daala-rd"
+#define ENABLE_DAALA_FILTERING_TOKEN "--enable-daala-filtering"
 #define HIDE_BANNER_TOKEN "--hide-banner"
 
 static EbErrorType validate_error(EbErrorType err, const char* token, const char* value) {
@@ -1029,10 +1031,10 @@ ConfigDescription config_entry_2p[] = {
 
 ConfigDescription config_entry_intra_refresh[] = {
     {KEYINT_TOKEN,
-     "Max GOP size (frames), default is -2 [-2: ~10 seconds (up to 305 frames), -1: \"infinite\" and only applicable for "
-     "CRF, 0: same as -1]"},
+     "Max GOP size (frames), use `s` suffix for seconds, default is -2 [-2: ~10 seconds (up to 305 frames), -1: "
+     "\"infinite\" and only applicable for CRF, 0: same as -1]"},
     {MIN_KEYINT_TOKEN,
-     "Min GOP size (frames), default is -1 [-1: multiple of the mini-gop length (automatic), "
+     "Min GOP size (frames), use `s` suffix for seconds, default is -1 [-1: multiple of the mini-gop length (automatic), "
      "0: no minimum]"},
     {INTRA_REFRESH_TYPE_TOKEN, "Intra refresh type, default is 2 [1: FWD Frame (Open GOP), 2: KEY Frame (Closed GOP)]"},
     {SCENE_CHANGE_DETECTION_TOKEN, "Scene change detection control, default is 1 [0-1]"},
@@ -1245,6 +1247,10 @@ ConfigDescription config_entry_psychovisual[] = {
      "Default is 0 [0-3]."},
     {ENABLE_DAALA_TOKEN,
      "Enable Daala distortion metric, default is 0 [0-4]"},
+    {ENABLE_DAALA_RD_TOKEN,
+     "Enable Daala distortion in model RD curvfit, default is 0 [0-1]"},
+    {ENABLE_DAALA_FILTERING_TOKEN,
+     "Enable Daala distortion in filtering decisions, default is 0 [0-3]"},
     // Termination
     {NULL, NULL}};
 
@@ -1518,6 +1524,8 @@ ConfigEntry config_entry[] = {
 
     // Daala
     {ENABLE_DAALA_TOKEN, "EnableDaala", set_cfg_generic_token},
+    {ENABLE_DAALA_RD_TOKEN, "EnableDaalaRd", set_cfg_generic_token},
+    {ENABLE_DAALA_FILTERING_TOKEN, "EnableDaalaFiltering", set_cfg_generic_token},
 
     // Termination
     {NULL, NULL, NULL}};
