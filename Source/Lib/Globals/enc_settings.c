@@ -1304,7 +1304,7 @@ EbErrorType svt_av1_set_default_params(EbSvtAv1EncConfiguration* config_ptr) {
 
     // Alt-Ref default values
     config_ptr->enable_tf       = 1;
-    config_ptr->enable_tf_key   = 1;
+    config_ptr->enable_tf_key   = 0;
     config_ptr->enable_overlays = false;
     config_ptr->tune            = 1;
     // Super-resolution default values

@@ -1142,7 +1142,7 @@ ConfigDescription config_entry_specific[] = {
 #endif
     // --- start: ALTREF_FILTERING_SUPPORT
     {ENABLE_TF_TOKEN, "Enable ALT-REF (temporally filtered) frames, default is 1 [0-3]"},
-    {ENABLE_TF_KEY_TOKEN, "Enable MCTF for key frames, default is 1 [0-1]"},
+    {ENABLE_TF_KEY_TOKEN, "Enable MCTF for key frames, default is 0 [0-1]"},
     {ENABLE_OVERLAYS,
      "Enable the insertion of overlayer pictures which will be used as an additional reference "
      "frame for the base layer picture, default is 0 [0-1]"},

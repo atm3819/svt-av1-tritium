@@ -344,6 +344,7 @@ SVT-AV1-Tritium Defaults:
 
 - `--scd 1` by default.
 - `--auto-tiling 1` by default.
+- `--enable-kf-tf 0` by default.
 
 ### Other Changes
 

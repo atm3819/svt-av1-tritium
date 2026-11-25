@@ -1008,7 +1008,7 @@ typedef struct EbSvtAv1EncConfiguration {
      * @brief Enable MCTF for key frames.
      * 0 = off
      * 1 = on
-     * Default is 1. */
+     * Default is 0. */
     bool enable_tf_key;
 
     /**
